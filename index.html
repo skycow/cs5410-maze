@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+<head>
+    <meta charset = "UTF-8">
+    <title>Canvas Rendering - Shapes</title>
+    <script src = "script.js"></script>
+</head>
+<body onload = "initialize(5)">
+        <div style="width:100%; float:left">
+            <div id="div-time" style="width:25%; float:left">0:00</div>
+            <div id="div-score" style="width:25%; float:left">Score: <span id="span-score">0</span></div>
+        </div>
+    <div style="width:50%; float:left">
+        <canvas id = "canvas-main" width = "1000" height = "1000" style = "width: 100%; height: 50%"></canvas>
+    </div>  
+    <div style="width:50%; float:left">
+        <div>
+            <button onclick="initialize(5)">5X5</button>
+        </div>
+        <div>
+            <button onclick="initialize(10)">10X10</button>
+        </div>    
+        <div>
+            <button onclick="initialize(15)">15X15</button>
+        </div>    
+        <div>
+            <button onclick="initialize(20)">20X20</button>
+        </div>    
+        <div>
+            <button>New Game</button>
+        </div>    
+        <div>
+            <button>High Score</button>
+        </div>    
+        <div>
+            <button>Credits</button>
+        </div>    
+    </div>
+</body>
+</html>
