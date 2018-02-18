@@ -380,6 +380,7 @@ function update(elapsedTime) {
 	//console.log(elapsedTime);
 	if(newGame) {
 	  prevTime = elapsedTime;
+	  newGame = false;
 	}
 	gameTime = (elapsedTime-prevTime)/1000;
 }
