@@ -10,7 +10,9 @@ var path = [];
 var score = 0;
 var showScore = true;
 var showPath = false;
-
+var prevTime = 0;
+var newGame = true;
+	
 let imgFloor = new Image();
 imgFloor.isReady = false;
 imgFloor.onload = function() {
@@ -376,7 +378,10 @@ function render() {
 
 function update(elapsedTime) {
 	//console.log(elapsedTime);
-	gameTime = elapsedTime/1000;
+	if(newGame) {
+	  prevTime = elapsedTime;
+	}
+	gameTime = (elapsedTime-prevTime)/1000;
 }
 
 function processInput() {
@@ -411,8 +416,10 @@ function initialize(inSize) {
 		inputStage[event.keyCode] = event.keyCode;
 	});
 	
-	size = inSize;
-
+	if(inSize) {	
+	  size = inSize;
+	}
+	newGame = true;
 	createMaze(inSize);
 	myCharacter = createCharacter('color_fish_red.png', maze[0][0]);
 
